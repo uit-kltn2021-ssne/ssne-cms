@@ -25,4 +25,4 @@ jobs:
         script: |
           cd ${{ secrets.PROJECT_PATH }}
           git pull
-          ${{ secrets.NPM_BIN }} install
+          npm install
