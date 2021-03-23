@@ -25,4 +25,4 @@ jobs:
         script: |
           cd ${{ secrets.PROJECT_PATH }}
           git pull
-          ./deploy.sh
+          ${{ secrets.NPM_BIN }} install
