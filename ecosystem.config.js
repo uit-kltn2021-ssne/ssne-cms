@@ -1,9 +1,9 @@
 module.exports = {
-    apps: [
-      {
-        name: 'app',
-        script: 'strapi',
-        args: 'develop',
-      },
-    ],
-  };
+  apps: [
+    {
+      name: "server",
+      script: "npm",
+      args: "run develop",
+    },
+  ],
+};
