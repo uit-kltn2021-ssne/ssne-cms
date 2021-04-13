@@ -3,7 +3,7 @@ module.exports = {
     {
       name: "server",
       script: "npm",
-      args: "run develop",
+      args: "run start",
     },
   ],
 };
