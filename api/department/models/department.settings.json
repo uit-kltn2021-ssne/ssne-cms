@@ -20,10 +20,6 @@
     "description": {
       "type": "text"
     },
-    "projects": {
-      "via": "department",
-      "collection": "project"
-    },
     "employees": {
       "via": "department",
       "collection": "employee"

@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/projects": {
+    "/departments": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Project"
+                    "$ref": "#/components/schemas/Department"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Department"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Project"
+                  "$ref": "#/components/schemas/Department"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Department"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProject"
+                "$ref": "#/components/schemas/NewDepartment"
               }
             }
           }
         }
       }
     },
-    "/projects/count": {
+    "/departments/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Department"
         ],
         "parameters": []
       }
     },
-    "/projects/{id}": {
+    "/departments/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Project"
+                  "$ref": "#/components/schemas/Department"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Department"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Project"
+                  "$ref": "#/components/schemas/Department"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Department"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProject"
+                "$ref": "#/components/schemas/NewDepartment"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Department"
         ],
         "parameters": [
           {
@@ -514,11 +514,10 @@
   },
   "components": {
     "schemas": {
-      "Project": {
+      "Department": {
         "required": [
           "id",
-          "name",
-          "active"
+          "name"
         ],
         "properties": {
           "id": {
@@ -527,79 +526,77 @@
           "name": {
             "type": "string"
           },
-          "start_date": {
-            "type": "string",
-            "format": "date"
-          },
-          "active": {
-            "type": "boolean",
-            "default": true
-          },
-          "Description": {
+          "location": {
             "type": "string"
           },
-          "department": {
-            "required": [
-              "id",
-              "name"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "location": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "projects": {
-                "type": "array",
-                "items": {
+          "description": {
+            "type": "string"
+          },
+          "employees": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "phoneNumber": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "skypeId": {
+                  "type": "string"
+                },
+                "facebook": {
+                  "type": "string"
+                },
+                "employeeId": {
+                  "type": "string"
+                },
+                "department": {
+                  "type": "string"
+                },
+                "introduction": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
                   "type": "string"
                 }
-              },
-              "employees": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
             }
           }
         }
       },
-      "NewProject": {
+      "NewDepartment": {
         "required": [
-          "name",
-          "active"
+          "name"
         ],
         "properties": {
           "name": {
             "type": "string"
           },
-          "start_date": {
-            "type": "string",
-            "format": "date"
-          },
-          "active": {
-            "type": "boolean",
-            "default": true
-          },
-          "Description": {
+          "location": {
             "type": "string"
           },
-          "department": {
+          "description": {
             "type": "string"
+          },
+          "employees": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"
@@ -613,7 +610,7 @@
   },
   "tags": [
     {
-      "name": "Project"
+      "name": "Department"
     }
   ]
 }

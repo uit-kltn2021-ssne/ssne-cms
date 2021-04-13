@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/titles": {
+    "/employees": {
       "get": {
         "deprecated": false,
-        "description": "Find all the titles's records",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve titles document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Titles"
+                    "$ref": "#/components/schemas/Employee"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Titles"
+          "Employee"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new titles record",
+        "description": "Create a new record",
         "responses": {
           "200": {
-            "description": "Retrieve titles document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Titles"
+                  "$ref": "#/components/schemas/Employee"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Titles"
+          "Employee"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewTitles"
+                "$ref": "#/components/schemas/NewEmployee"
               }
             }
           }
         }
       }
     },
-    "/titles/count": {
+    "/employees/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of titles documents",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve titles document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Titles"
+          "Employee"
         ],
         "parameters": []
       }
     },
-    "/titles/{id}": {
+    "/employees/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one titles record",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve titles document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Titles"
+                  "$ref": "#/components/schemas/Employee"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Titles"
+          "Employee"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single titles record",
+        "description": "Update a record",
         "responses": {
           "200": {
-            "description": "Retrieve titles document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Titles"
+                  "$ref": "#/components/schemas/Employee"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Titles"
+          "Employee"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewTitles"
+                "$ref": "#/components/schemas/NewEmployee"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single titles record",
+        "description": "Delete a record",
         "responses": {
           "200": {
-            "description": "deletes a single titles based on the ID supplied",
+            "description": "deletes a single record based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Titles"
+          "Employee"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Titles": {
+      "Employee": {
         "required": [
           "id",
           "name"
@@ -526,12 +526,61 @@
           "name": {
             "type": "string"
           },
-          "description": {
+          "phoneNumber": {
+            "type": "string",
+            "maxLength": 15,
+            "minLength": 8
+          },
+          "email": {
+            "type": "string"
+          },
+          "skypeId": {
+            "type": "string"
+          },
+          "facebook": {
+            "type": "string"
+          },
+          "employeeId": {
+            "type": "string"
+          },
+          "department": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "location": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "employees": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "introduction": {
             "type": "string"
           }
         }
       },
-      "NewTitles": {
+      "NewEmployee": {
         "required": [
           "name"
         ],
@@ -539,7 +588,27 @@
           "name": {
             "type": "string"
           },
-          "description": {
+          "phoneNumber": {
+            "type": "string",
+            "maxLength": 15,
+            "minLength": 8
+          },
+          "email": {
+            "type": "string"
+          },
+          "skypeId": {
+            "type": "string"
+          },
+          "facebook": {
+            "type": "string"
+          },
+          "employeeId": {
+            "type": "string"
+          },
+          "department": {
+            "type": "string"
+          },
+          "introduction": {
             "type": "string"
           },
           "created_by": {
@@ -554,7 +623,7 @@
   },
   "tags": [
     {
-      "name": "Titles"
+      "name": "Employee"
     }
   ]
 }
