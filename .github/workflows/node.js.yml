@@ -24,6 +24,7 @@ jobs:
         password: ${{ secrets.SERVER_PASSWORD }}
         script: |
           cd ${{ secrets.PROJECT_PATH }}
+          git reset --hard
           git pull
           npm install
           npm run build
