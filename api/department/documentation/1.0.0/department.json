@@ -532,42 +532,6 @@
           "description": {
             "type": "string"
           },
-          "projects": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name",
-                "active"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "start_date": {
-                  "type": "string"
-                },
-                "active": {
-                  "type": "boolean"
-                },
-                "Description": {
-                  "type": "string"
-                },
-                "department": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "employees": {
             "type": "array",
             "items": {
@@ -603,6 +567,9 @@
                 "introduction": {
                   "type": "string"
                 },
+                "avatar": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -627,12 +594,6 @@
           },
           "description": {
             "type": "string"
-          },
-          "projects": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "employees": {
             "type": "array",
