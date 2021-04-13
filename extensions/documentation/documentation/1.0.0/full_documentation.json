@@ -27,7 +27,7 @@
       "description": "Development server"
     },
     {
-      "url": "YOUR_STAGING_SERVER",
+      "url": "http://139.180.187.32:1337",
       "description": "Staging server"
     },
     {
