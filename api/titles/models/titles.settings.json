@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "titles",
+  "info": {
+    "name": "Title",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

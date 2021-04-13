@@ -11,6 +11,9 @@
   },
   "devDependencies": {},
   "dependencies": {
+    "@google-cloud/dialogflow": "^3.4.0",
+    "json2csv": "^5.0.6",
+    "node-json2html": "^2.1.0",
     "strapi": "3.5.3",
     "strapi-admin": "3.5.3",
     "strapi-connector-mongoose": "3.5.3",
@@ -20,7 +23,7 @@
     "strapi-plugin-email": "3.5.3",
     "strapi-plugin-upload": "3.5.3",
     "strapi-plugin-users-permissions": "3.5.3",
-    "strapi-utils": "3.5.3"
+    "strapi-utils": "^3.5.3"
   },
   "author": {
     "name": "A Strapi developer"

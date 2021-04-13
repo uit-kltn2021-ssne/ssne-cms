@@ -1250,6 +1250,47 @@
                 "type": "string"
               }
             }
+          },
+          "employeeInfo": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "phoneNumber": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "skypeId": {
+                "type": "string"
+              },
+              "facebook": {
+                "type": "string"
+              },
+              "employeeId": {
+                "type": "string"
+              },
+              "department": {
+                "type": "string"
+              },
+              "introduction": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -1290,6 +1331,9 @@
             "default": false
           },
           "role": {
+            "type": "string"
+          },
+          "employeeInfo": {
             "type": "string"
           },
           "created_by": {

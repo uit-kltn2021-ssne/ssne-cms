@@ -1,0 +1,20 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/",
+      "handler": "dialogflow-webhook.index",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/webhook",
+      "handler": "dialogflow-webhook.webhook",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
