@@ -37,13 +37,13 @@ module.exports = {
       let m = {
         name: { $regex: employeeName, $options: "i" },
       };
-      let res = await strapi.services.employee.findOne(m, ['title']);
+      let res = await strapi.services.employee.findOne(m, ['department']);
       if (res) {
-        message = 'Đây là thông tin bạn cần tìm:\n' + res.name + ' (' + res.employee_id + ')\n' +
+        message = 'Đây là thông tin bạn cần tìm:\n' + res.name + ' (' + res.employeeId + ')\n' +
                   res.title.name +
-                  '\nSĐT: ' + res.phone_number +
+                  '\nSĐT: ' + res.phoneNumber +
                   '\nEmail: ' + res.email +
-                  '\nSkype: ' + res.skype_id +
+                  '\nSkype: ' + res.skypeId +
                   '\nFacebook: ' + res.facebook;
       }
     }
