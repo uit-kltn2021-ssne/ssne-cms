@@ -7,8 +7,8 @@
       "termsOfService": "YOUR_TERMS_OF_SERVICE_URL",
       "contact": {
         "name": "TEAM",
-        "email": "contact-email@something.io",
-        "url": "mywebsite.io"
+        "email": "contact@ssne.xyz",
+        "url": "api.ssne.xyz"
       },
       "license": {
         "name": "Apache 2.0",
@@ -31,11 +31,7 @@
         "description": "Development server"
       },
       {
-        "url": "http://139.180.187.32:1337",
-        "description": "Staging server"
-      },
-      {
-        "url": "YOUR_PRODUCTION_SERVER",
+        "url": "https://api.ssne.xyz",
         "description": "Production server"
       }
     ],
