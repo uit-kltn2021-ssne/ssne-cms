@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "checklist_items",
+  "info": {
+    "name": "ChecklistItem"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "Status": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "employee": {
+      "model": "employee",
+      "via": "checklist"
+    },
+    "tag": {
+      "type": "string"
+    }
+  }
+}

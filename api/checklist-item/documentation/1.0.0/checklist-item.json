@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/departments": {
+    "/checklist-items": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,9 +10,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Department"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -51,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Department"
+          "Checklist-item"
         ],
         "parameters": [
           {
@@ -201,72 +202,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Department"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Department"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewDepartment"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/departments/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
                   "properties": {
-                    "count": {
-                      "type": "integer"
+                    "foo": {
+                      "type": "string"
                     }
                   }
                 }
@@ -306,12 +244,22 @@
         },
         "summary": "",
         "tags": [
-          "Department"
+          "Checklist-item"
         ],
-        "parameters": []
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewChecklist-item"
+              }
+            }
+          }
+        }
       }
     },
-    "/departments/{id}": {
+    "/checklist-items/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +269,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Department"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -359,7 +311,64 @@
         },
         "summary": "",
         "tags": [
-          "Department"
+          "Checklist-item"
+        ],
+        "parameters": []
+      }
+    },
+    "/checklist-items/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Checklist-item"
         ],
         "parameters": [
           {
@@ -383,7 +392,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Department"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -421,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Department"
+          "Checklist-item"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewDepartment"
+                "$ref": "#/components/schemas/NewChecklist-item"
               }
             }
           }
@@ -495,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Department"
+          "Checklist-item"
         ],
         "parameters": [
           {
@@ -514,98 +527,102 @@
   },
   "components": {
     "schemas": {
-      "Department": {
+      "Checklist-item": {
         "required": [
           "id",
-          "name"
+          "Title",
+          "Status"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "Title": {
             "type": "string"
           },
-          "location": {
+          "Description": {
             "type": "string"
           },
-          "description": {
-            "type": "string"
+          "Status": {
+            "type": "boolean",
+            "default": false
           },
-          "employees": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "phoneNumber": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "skypeId": {
-                  "type": "string"
-                },
-                "facebook": {
-                  "type": "string"
-                },
-                "employeeId": {
-                  "type": "string"
-                },
-                "department": {
-                  "type": "string"
-                },
-                "introduction": {
-                  "type": "string"
-                },
-                "avatar": {
-                  "type": "string"
-                },
-                "checklist": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+          "employee": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "phoneNumber": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "skypeId": {
+                "type": "string"
+              },
+              "facebook": {
+                "type": "string"
+              },
+              "employeeId": {
+                "type": "string"
+              },
+              "department": {
+                "type": "string"
+              },
+              "introduction": {
+                "type": "string"
+              },
+              "avatar": {
+                "type": "string"
+              },
+              "checklist": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
+          },
+          "tag": {
+            "type": "string"
           }
         }
       },
-      "NewDepartment": {
+      "NewChecklist-item": {
         "required": [
-          "name"
+          "Title",
+          "Status"
         ],
         "properties": {
-          "name": {
+          "Title": {
             "type": "string"
           },
-          "location": {
+          "Description": {
             "type": "string"
           },
-          "description": {
+          "Status": {
+            "type": "boolean",
+            "default": false
+          },
+          "employee": {
             "type": "string"
           },
-          "employees": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "tag": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"
@@ -617,9 +634,5 @@
       }
     }
   },
-  "tags": [
-    {
-      "name": "Department"
-    }
-  ]
+  "tags": []
 }

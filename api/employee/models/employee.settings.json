@@ -49,6 +49,10 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "checklist": {
+      "via": "employee",
+      "collection": "checklist-item"
     }
   }
 }

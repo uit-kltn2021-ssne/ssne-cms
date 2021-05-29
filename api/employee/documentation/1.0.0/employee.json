@@ -715,6 +715,42 @@
                 "type": "string"
               }
             }
+          },
+          "checklist": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "Title",
+                "Status"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "Title": {
+                  "type": "string"
+                },
+                "Description": {
+                  "type": "string"
+                },
+                "Status": {
+                  "type": "boolean"
+                },
+                "employee": {
+                  "type": "string"
+                },
+                "tag": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -748,6 +784,12 @@
           },
           "introduction": {
             "type": "string"
+          },
+          "checklist": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"
