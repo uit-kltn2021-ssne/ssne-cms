@@ -721,20 +721,20 @@
             "items": {
               "required": [
                 "id",
-                "Title",
-                "Status"
+                "title",
+                "status"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "Title": {
+                "title": {
                   "type": "string"
                 },
-                "Description": {
+                "description": {
                   "type": "string"
                 },
-                "Status": {
+                "status": {
                   "type": "boolean"
                 },
                 "employee": {

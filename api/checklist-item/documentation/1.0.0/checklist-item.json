@@ -530,20 +530,20 @@
       "Checklist-item": {
         "required": [
           "id",
-          "Title",
-          "Status"
+          "title",
+          "status"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "Title": {
+          "title": {
             "type": "string"
           },
-          "Description": {
+          "description": {
             "type": "string"
           },
-          "Status": {
+          "status": {
             "type": "boolean",
             "default": false
           },
@@ -604,17 +604,17 @@
       },
       "NewChecklist-item": {
         "required": [
-          "Title",
-          "Status"
+          "title",
+          "status"
         ],
         "properties": {
-          "Title": {
+          "title": {
             "type": "string"
           },
-          "Description": {
+          "description": {
             "type": "string"
           },
-          "Status": {
+          "status": {
             "type": "boolean",
             "default": false
           },

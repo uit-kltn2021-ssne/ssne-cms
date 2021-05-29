@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/29/2021 11:53:39 PM"
+    "x-generation-date": "05/30/2021 12:36:51 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -5080,20 +5080,20 @@
       "Checklist-item": {
         "required": [
           "id",
-          "Title",
-          "Status"
+          "title",
+          "status"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "Title": {
+          "title": {
             "type": "string"
           },
-          "Description": {
+          "description": {
             "type": "string"
           },
-          "Status": {
+          "status": {
             "type": "boolean",
             "default": false
           },
@@ -5154,17 +5154,17 @@
       },
       "NewChecklist-item": {
         "required": [
-          "Title",
-          "Status"
+          "title",
+          "status"
         ],
         "properties": {
-          "Title": {
+          "title": {
             "type": "string"
           },
-          "Description": {
+          "description": {
             "type": "string"
           },
-          "Status": {
+          "status": {
             "type": "boolean",
             "default": false
           },
@@ -5419,20 +5419,20 @@
             "items": {
               "required": [
                 "id",
-                "Title",
-                "Status"
+                "title",
+                "status"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "Title": {
+                "title": {
                   "type": "string"
                 },
-                "Description": {
+                "description": {
                   "type": "string"
                 },
-                "Status": {
+                "status": {
                   "type": "boolean"
                 },
                 "employee": {
