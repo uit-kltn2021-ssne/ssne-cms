@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/employees": {
+    "/day-offs": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,9 +10,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Employee"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -51,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Employee"
+          "Day-off"
         ],
         "parameters": [
           {
@@ -201,72 +202,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Employee"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Employee"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewEmployee"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/employees/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
                   "properties": {
-                    "count": {
-                      "type": "integer"
+                    "foo": {
+                      "type": "string"
                     }
                   }
                 }
@@ -306,12 +244,22 @@
         },
         "summary": "",
         "tags": [
-          "Employee"
+          "Day-off"
         ],
-        "parameters": []
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewDay-off"
+              }
+            }
+          }
+        }
       }
     },
-    "/employees/{id}": {
+    "/day-offs/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +269,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Employee"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -359,7 +311,64 @@
         },
         "summary": "",
         "tags": [
-          "Employee"
+          "Day-off"
+        ],
+        "parameters": []
+      }
+    },
+    "/day-offs/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Day-off"
         ],
         "parameters": [
           {
@@ -383,7 +392,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Employee"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -421,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Employee"
+          "Day-off"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewEmployee"
+                "$ref": "#/components/schemas/NewDay-off"
               }
             }
           }
@@ -495,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Employee"
+          "Day-off"
         ],
         "parameters": [
           {
@@ -510,111 +523,31 @@
           }
         ]
       }
-    },
-    "/employees/sync": {
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Employee"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "foo": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
     }
   },
   "components": {
     "schemas": {
-      "Employee": {
+      "Day-off": {
         "required": [
           "id",
-          "name"
+          "numberOfHours"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "reason": {
             "type": "string"
           },
-          "phoneNumber": {
+          "date": {
             "type": "string",
-            "maxLength": 15,
-            "minLength": 8
+            "format": "date"
           },
-          "email": {
-            "type": "string"
+          "numberOfHours": {
+            "type": "integer",
+            "default": 8
           },
-          "skypeId": {
-            "type": "string"
-          },
-          "facebook": {
-            "type": "string"
-          },
-          "employeeId": {
-            "type": "string"
-          },
-          "department": {
+          "employee": {
             "required": [
               "id",
               "name"
@@ -626,13 +559,58 @@
               "name": {
                 "type": "string"
               },
-              "location": {
+              "phoneNumber": {
                 "type": "string"
               },
-              "description": {
+              "email": {
                 "type": "string"
               },
-              "employees": {
+              "skypeId": {
+                "type": "string"
+              },
+              "facebook": {
+                "type": "string"
+              },
+              "employeeId": {
+                "type": "string"
+              },
+              "department": {
+                "type": "string"
+              },
+              "introduction": {
+                "type": "string"
+              },
+              "avatar": {
+                "type": "string"
+              },
+              "checklist": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tasks": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "day_offs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "position": {
+                "type": "string"
+              },
+              "support_tickets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "support_replies": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -645,329 +623,27 @@
                 "type": "string"
               }
             }
-          },
-          "introduction": {
-            "type": "string"
-          },
-          "avatar": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "checklist": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "title",
-                "status"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "status": {
-                  "type": "boolean"
-                },
-                "employee": {
-                  "type": "string"
-                },
-                "tag": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "tasks": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "title"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "status": {
-                  "type": "boolean"
-                },
-                "from": {
-                  "type": "string"
-                },
-                "to": {
-                  "type": "string"
-                },
-                "employee": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "day_offs": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "numberOfHours"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "reason": {
-                  "type": "string"
-                },
-                "date": {
-                  "type": "string"
-                },
-                "numberOfHours": {
-                  "type": "integer"
-                },
-                "employee": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "position": {
-            "type": "string"
-          },
-          "support_tickets": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "subject": {
-                  "type": "string"
-                },
-                "content": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string",
-                  "enum": [
-                    "it_support",
-                    "hr_support",
-                    "other"
-                  ]
-                },
-                "owner": {
-                  "type": "string"
-                },
-                "status": {
-                  "type": "string",
-                  "enum": [
-                    "pending",
-                    "approved",
-                    "rejected"
-                  ]
-                },
-                "support_replies": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "support_replies": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "content": {
-                  "type": "string"
-                },
-                "ticket": {
-                  "type": "string"
-                },
-                "creator": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
           }
         }
       },
-      "NewEmployee": {
+      "NewDay-off": {
         "required": [
-          "name"
+          "numberOfHours"
         ],
         "properties": {
-          "name": {
+          "reason": {
             "type": "string"
           },
-          "phoneNumber": {
+          "date": {
             "type": "string",
-            "maxLength": 15,
-            "minLength": 8
+            "format": "date"
           },
-          "email": {
+          "numberOfHours": {
+            "type": "integer",
+            "default": 8
+          },
+          "employee": {
             "type": "string"
-          },
-          "skypeId": {
-            "type": "string"
-          },
-          "facebook": {
-            "type": "string"
-          },
-          "employeeId": {
-            "type": "string"
-          },
-          "department": {
-            "type": "string"
-          },
-          "introduction": {
-            "type": "string"
-          },
-          "checklist": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "tasks": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "day_offs": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "position": {
-            "type": "string"
-          },
-          "support_tickets": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "support_replies": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "created_by": {
             "type": "string"
@@ -979,9 +655,5 @@
       }
     }
   },
-  "tags": [
-    {
-      "name": "Employee"
-    }
-  ]
+  "tags": []
 }

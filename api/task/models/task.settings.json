@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "checklist_items",
+  "collectionName": "tasks",
   "info": {
-    "name": "ChecklistItem",
+    "name": "Task",
     "description": ""
   },
   "options": {
@@ -16,19 +16,20 @@
       "required": true
     },
     "description": {
-      "type": "richtext"
+      "type": "text"
     },
     "status": {
-      "type": "boolean",
-      "default": false,
-      "required": true
+      "type": "boolean"
+    },
+    "from": {
+      "type": "datetime"
+    },
+    "to": {
+      "type": "datetime"
     },
     "employee": {
-      "via": "checklist",
+      "via": "tasks",
       "model": "employee"
-    },
-    "tag": {
-      "type": "string"
     }
   }
 }

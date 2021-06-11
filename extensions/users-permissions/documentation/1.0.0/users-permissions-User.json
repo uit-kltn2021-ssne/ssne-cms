@@ -1293,6 +1293,33 @@
                   "type": "string"
                 }
               },
+              "tasks": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "day_offs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "position": {
+                "type": "string"
+              },
+              "support_tickets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "support_replies": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },

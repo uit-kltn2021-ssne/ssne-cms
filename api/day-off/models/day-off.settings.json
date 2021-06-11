@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "day_offs",
+  "info": {
+    "name": "DayOff"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "reason": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "numberOfHours": {
+      "type": "integer",
+      "max": 8,
+      "min": 0,
+      "required": true,
+      "default": 8
+    },
+    "employee": {
+      "via": "day_offs",
+      "model": "employee"
+    }
+  }
+}

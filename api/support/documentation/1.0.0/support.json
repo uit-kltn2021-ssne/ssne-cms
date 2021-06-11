@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/employees": {
+    "/supports": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Employee"
+                    "$ref": "#/components/schemas/Support"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Employee"
+          "Support"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Employee"
+                  "$ref": "#/components/schemas/Support"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Employee"
+          "Support"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewEmployee"
+                "$ref": "#/components/schemas/NewSupport"
               }
             }
           }
         }
       }
     },
-    "/employees/count": {
+    "/supports/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Employee"
+          "Support"
         ],
         "parameters": []
       }
     },
-    "/employees/{id}": {
+    "/supports/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Employee"
+                  "$ref": "#/components/schemas/Support"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Employee"
+          "Support"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Employee"
+                  "$ref": "#/components/schemas/Support"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Employee"
+          "Support"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewEmployee"
+                "$ref": "#/components/schemas/NewSupport"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Employee"
+          "Support"
         ],
         "parameters": [
           {
@@ -510,111 +510,33 @@
           }
         ]
       }
-    },
-    "/employees/sync": {
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Employee"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "foo": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
     }
   },
   "components": {
     "schemas": {
-      "Employee": {
+      "Support": {
         "required": [
-          "id",
-          "name"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "subject": {
             "type": "string"
           },
-          "phoneNumber": {
+          "content": {
+            "type": "string"
+          },
+          "type": {
             "type": "string",
-            "maxLength": 15,
-            "minLength": 8
+            "enum": [
+              "it_support",
+              "hr_support",
+              "other"
+            ]
           },
-          "email": {
-            "type": "string"
-          },
-          "skypeId": {
-            "type": "string"
-          },
-          "facebook": {
-            "type": "string"
-          },
-          "employeeId": {
-            "type": "string"
-          },
-          "department": {
+          "owner": {
             "required": [
               "id",
               "name"
@@ -626,13 +548,58 @@
               "name": {
                 "type": "string"
               },
-              "location": {
+              "phoneNumber": {
                 "type": "string"
               },
-              "description": {
+              "email": {
                 "type": "string"
               },
-              "employees": {
+              "skypeId": {
+                "type": "string"
+              },
+              "facebook": {
+                "type": "string"
+              },
+              "employeeId": {
+                "type": "string"
+              },
+              "department": {
+                "type": "string"
+              },
+              "introduction": {
+                "type": "string"
+              },
+              "avatar": {
+                "type": "string"
+              },
+              "checklist": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tasks": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "day_offs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "position": {
+                "type": "string"
+              },
+              "support_tickets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "support_replies": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -646,234 +613,13 @@
               }
             }
           },
-          "introduction": {
-            "type": "string"
-          },
-          "avatar": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "checklist": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "title",
-                "status"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "status": {
-                  "type": "boolean"
-                },
-                "employee": {
-                  "type": "string"
-                },
-                "tag": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "tasks": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "title"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "status": {
-                  "type": "boolean"
-                },
-                "from": {
-                  "type": "string"
-                },
-                "to": {
-                  "type": "string"
-                },
-                "employee": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "day_offs": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "numberOfHours"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "reason": {
-                  "type": "string"
-                },
-                "date": {
-                  "type": "string"
-                },
-                "numberOfHours": {
-                  "type": "integer"
-                },
-                "employee": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "position": {
-            "type": "string"
-          },
-          "support_tickets": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "subject": {
-                  "type": "string"
-                },
-                "content": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string",
-                  "enum": [
-                    "it_support",
-                    "hr_support",
-                    "other"
-                  ]
-                },
-                "owner": {
-                  "type": "string"
-                },
-                "status": {
-                  "type": "string",
-                  "enum": [
-                    "pending",
-                    "approved",
-                    "rejected"
-                  ]
-                },
-                "support_replies": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "approved",
+              "rejected"
+            ]
           },
           "support_replies": {
             "type": "array",
@@ -905,63 +651,32 @@
           }
         }
       },
-      "NewEmployee": {
-        "required": [
-          "name"
-        ],
+      "NewSupport": {
         "properties": {
-          "name": {
+          "subject": {
             "type": "string"
           },
-          "phoneNumber": {
+          "content": {
+            "type": "string"
+          },
+          "type": {
             "type": "string",
-            "maxLength": 15,
-            "minLength": 8
+            "enum": [
+              "it_support",
+              "hr_support",
+              "other"
+            ]
           },
-          "email": {
+          "owner": {
             "type": "string"
           },
-          "skypeId": {
-            "type": "string"
-          },
-          "facebook": {
-            "type": "string"
-          },
-          "employeeId": {
-            "type": "string"
-          },
-          "department": {
-            "type": "string"
-          },
-          "introduction": {
-            "type": "string"
-          },
-          "checklist": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "tasks": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "day_offs": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "position": {
-            "type": "string"
-          },
-          "support_tickets": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "approved",
+              "rejected"
+            ]
           },
           "support_replies": {
             "type": "array",
@@ -981,7 +696,7 @@
   },
   "tags": [
     {
-      "name": "Employee"
+      "name": "Support"
     }
   ]
 }

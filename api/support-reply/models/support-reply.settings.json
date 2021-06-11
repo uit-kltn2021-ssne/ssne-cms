@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "support_replies",
+  "info": {
+    "name": "SupportReply"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    },
+    "ticket": {
+      "model": "support",
+      "via": "support_replies"
+    },
+    "creator": {
+      "model": "employee",
+      "via": "support_replies"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/day-offs",
+      "handler": "day-off.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/day-offs/count",
+      "handler": "day-off.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/day-offs/:id",
+      "handler": "day-off.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/day-offs",
+      "handler": "day-off.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/day-offs/:id",
+      "handler": "day-off.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/day-offs/:id",
+      "handler": "day-off.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

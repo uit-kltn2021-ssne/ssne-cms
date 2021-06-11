@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/support-replies",
+      "handler": "support-reply.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/support-replies/count",
+      "handler": "support-reply.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/support-replies/:id",
+      "handler": "support-reply.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/support-replies",
+      "handler": "support-reply.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/support-replies/:id",
+      "handler": "support-reply.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/support-replies/:id",
+      "handler": "support-reply.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -51,8 +51,27 @@
       "required": false
     },
     "checklist": {
-      "via": "employee",
-      "collection": "checklist-item"
+      "collection": "checklist-item",
+      "via": "employee"
+    },
+    "tasks": {
+      "collection": "task",
+      "via": "employee"
+    },
+    "day_offs": {
+      "collection": "day-off",
+      "via": "employee"
+    },
+    "position": {
+      "type": "string"
+    },
+    "support_tickets": {
+      "via": "owner",
+      "collection": "support"
+    },
+    "support_replies": {
+      "via": "creator",
+      "collection": "support-reply"
     }
   }
 }

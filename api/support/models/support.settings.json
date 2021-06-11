@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "supports",
+  "info": {
+    "name": "Support",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "subject": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "it_support",
+        "hr_support",
+        "other"
+      ]
+    },
+    "owner": {
+      "model": "employee",
+      "via": "support_tickets"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ]
+    },
+    "support_replies": {
+      "via": "ticket",
+      "collection": "support-reply"
+    }
+  }
+}
