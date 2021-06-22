@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "06/12/2021 1:28:12 AM"
+    "x-generation-date": "06/22/2021 10:58:32 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7215,12 +7215,6 @@
                   "type": "string"
                 }
               },
-              "day_offs": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
               "position": {
                 "type": "string"
               },
@@ -7299,82 +7293,11 @@
             "type": "integer",
             "default": 8
           },
-          "employee": {
-            "required": [
-              "id",
-              "name"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "phoneNumber": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "skypeId": {
-                "type": "string"
-              },
-              "facebook": {
-                "type": "string"
-              },
-              "employeeId": {
-                "type": "string"
-              },
-              "department": {
-                "type": "string"
-              },
-              "introduction": {
-                "type": "string"
-              },
-              "avatar": {
-                "type": "string"
-              },
-              "checklist": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "tasks": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "day_offs": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "position": {
-                "type": "string"
-              },
-              "support_tickets": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "support_replies": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "name": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
           }
         }
       },
@@ -7394,7 +7317,10 @@
             "type": "integer",
             "default": 8
           },
-          "employee": {
+          "name": {
+            "type": "string"
+          },
+          "phoneNumber": {
             "type": "string"
           },
           "created_by": {
@@ -7468,12 +7394,6 @@
                   }
                 },
                 "tasks": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "day_offs": {
                   "type": "array",
                   "items": {
                     "type": "string"
@@ -7738,38 +7658,6 @@
               }
             }
           },
-          "day_offs": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "numberOfHours"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "reason": {
-                  "type": "string"
-                },
-                "date": {
-                  "type": "string"
-                },
-                "numberOfHours": {
-                  "type": "integer"
-                },
-                "employee": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "position": {
             "type": "string"
           },
@@ -7891,12 +7779,6 @@
             }
           },
           "tasks": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "day_offs": {
             "type": "array",
             "items": {
               "type": "string"
@@ -8063,12 +7945,6 @@
                   "type": "string"
                 }
               },
-              "day_offs": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
               "position": {
                 "type": "string"
               },
@@ -8178,12 +8054,6 @@
                 }
               },
               "tasks": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "day_offs": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -8360,12 +8230,6 @@
                 }
               },
               "tasks": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "day_offs": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -8687,12 +8551,6 @@
                 }
               },
               "tasks": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "day_offs": {
                 "type": "array",
                 "items": {
                   "type": "string"

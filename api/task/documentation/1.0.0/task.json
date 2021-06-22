@@ -588,12 +588,6 @@
                   "type": "string"
                 }
               },
-              "day_offs": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
               "position": {
                 "type": "string"
               },

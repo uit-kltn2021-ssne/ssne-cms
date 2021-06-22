@@ -58,10 +58,6 @@
       "collection": "task",
       "via": "employee"
     },
-    "day_offs": {
-      "collection": "day-off",
-      "via": "employee"
-    },
     "position": {
       "type": "string"
     },

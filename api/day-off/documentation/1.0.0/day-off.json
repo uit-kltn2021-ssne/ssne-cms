@@ -547,82 +547,11 @@
             "type": "integer",
             "default": 8
           },
-          "employee": {
-            "required": [
-              "id",
-              "name"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "phoneNumber": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "skypeId": {
-                "type": "string"
-              },
-              "facebook": {
-                "type": "string"
-              },
-              "employeeId": {
-                "type": "string"
-              },
-              "department": {
-                "type": "string"
-              },
-              "introduction": {
-                "type": "string"
-              },
-              "avatar": {
-                "type": "string"
-              },
-              "checklist": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "tasks": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "day_offs": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "position": {
-                "type": "string"
-              },
-              "support_tickets": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "support_replies": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "name": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
           }
         }
       },
@@ -642,7 +571,10 @@
             "type": "integer",
             "default": 8
           },
-          "employee": {
+          "name": {
+            "type": "string"
+          },
+          "phoneNumber": {
             "type": "string"
           },
           "created_by": {

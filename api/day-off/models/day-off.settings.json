@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "day_offs",
   "info": {
-    "name": "DayOff"
+    "name": "DayOff",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -23,9 +24,11 @@
       "required": true,
       "default": 8
     },
-    "employee": {
-      "via": "day_offs",
-      "model": "employee"
+    "name": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
     }
   }
 }

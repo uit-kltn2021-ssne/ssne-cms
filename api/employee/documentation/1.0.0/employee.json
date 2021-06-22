@@ -790,38 +790,6 @@
               }
             }
           },
-          "day_offs": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "numberOfHours"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "reason": {
-                  "type": "string"
-                },
-                "date": {
-                  "type": "string"
-                },
-                "numberOfHours": {
-                  "type": "integer"
-                },
-                "employee": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "position": {
             "type": "string"
           },
@@ -943,12 +911,6 @@
             }
           },
           "tasks": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "day_offs": {
             "type": "array",
             "items": {
               "type": "string"
