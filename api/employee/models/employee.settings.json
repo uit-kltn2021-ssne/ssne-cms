@@ -68,6 +68,11 @@
     "support_replies": {
       "via": "creator",
       "collection": "support-reply"
+    },
+    "user": {
+      "via": "employee_info",
+      "plugin": "users-permissions",
+      "model": "user"
     }
   }
 }

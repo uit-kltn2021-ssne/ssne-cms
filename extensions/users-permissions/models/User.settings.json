@@ -59,8 +59,9 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "employeeInfo": {
-      "model": "employee"
+    "employee_info": {
+      "model": "employee",
+      "via": "user"
     }
   }
 }

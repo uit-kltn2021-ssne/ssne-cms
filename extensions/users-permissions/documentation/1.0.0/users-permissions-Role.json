@@ -561,7 +561,7 @@
                 "role": {
                   "type": "string"
                 },
-                "employeeInfo": {
+                "employee_info": {
                   "type": "string"
                 },
                 "created_by": {
