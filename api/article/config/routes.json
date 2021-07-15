@@ -18,6 +18,14 @@
     },
     {
       "method": "GET",
+      "path": "/articles/sync",
+      "handler": "article.syncArticles",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/articles/:id",
       "handler": "article.findOne",
       "config": {
